@@ -1,11 +1,11 @@
 import 'package:firstproject/pages/confirmreg_page.dart';
-import 'package:firstproject/registration_page.dart';
+import 'package:firstproject/pages/registration_page.dart';
 import 'package:get/get.dart';
 
 
 class Routes {
   //list variable nama halaman 
-  static const String regristation = "/regristasion";
+  static const String regristation = "/regristation";
   static const String confirm_regristation = "/confirm_regristation";
   //other pages here
 //ditempel di main.dart / didaftarkan di main.dart

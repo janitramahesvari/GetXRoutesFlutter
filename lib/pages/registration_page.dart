@@ -9,23 +9,29 @@ class RegistrationPage extends StatelessWidget {
   final RxString selectedJenisKelamin = "Laki-laki".obs;
   final List<String> listJenisKelamin = ["Laki-laki", "Perempuan"];
 
-  @override
-  Widget build(BuildContext context) {
-    TextEditingController txtNama = TextEditingController();
+ TextEditingController txtNama = TextEditingController();
     TextEditingController txtAlamat = TextEditingController();
     TextEditingController txtEmail = TextEditingController();
     TextEditingController txtNoWa = TextEditingController();
-    
+
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Registratuion Page")),
+      
+      appBar: AppBar(title: Text("Registration Page")),
     
       body: SingleChildScrollView(
         child: Column(
           children: [
             CustomTextfield(txtController: txtNama, myHint: "input name"),
-            CustomTextfield(txtController: txtAlamat, myHint: "input name"),
-            CustomTextfield(txtController: txtEmail, myHint: "input name"),
-            CustomTextfield(txtController: txtNoWa, myHint: "input name"),
+            const SizedBox(height: 15),
+            CustomTextfield(txtController: txtAlamat, myHint: "input alamat  "),
+            const SizedBox(height: 15),
+            CustomTextfield(txtController: txtEmail, myHint: "input email"),
+            const SizedBox(height: 15),
+            CustomTextfield(txtController: txtNoWa, myHint: "input no wa"),
+            const SizedBox(height: 15),
 
             Obx(
               () => DropdownButtonFormField<String>(
