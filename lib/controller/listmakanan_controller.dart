@@ -30,5 +30,5 @@ class ListMakananController extends GetxController {
     gambarMakanan:"https://cdn-linkumkm.bri.co.id/uploads/library/1/2/4/0/2/12402.jpg",
    deskripsiMakanan: "Oleh-oleh khas Kudus berbahan dasar beras ketan dan santan.",
    ratingMakanan: 4.8, reviewMakanan: "Makanan ini rasanya legit, cocok untuk cemilan"),
-  ];
+  ].obs;
 }
