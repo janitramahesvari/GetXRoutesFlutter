@@ -1,14 +1,17 @@
+import 'package:firstproject/component_09/custom_text.dart';
+import 'package:firstproject/controllers_09/detail_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:firstproject/models09/makanan_model.dart';
 import 'package:get/get.dart';
 
 class DetailmakananPage extends StatelessWidget {
   DetailmakananPage({super.key});
 
+  final DetailmakananController controller =
+      Get.find<DetailmakananController>();
+
   @override
   Widget build(BuildContext context) {
-    final MakananModel makanan =
-        Get.arguments as MakananModel;
+    final makanan = controller.makanan;
 
     return Scaffold(
       appBar: AppBar(
@@ -16,12 +19,10 @@ class DetailmakananPage extends StatelessWidget {
         backgroundColor: Colors.orange,
         foregroundColor: Colors.white,
       ),
-
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Gambar makanan
             Image.network(
               makanan.gambarMakanan,
               width: double.infinity,
@@ -40,36 +41,26 @@ class DetailmakananPage extends StatelessWidget {
                 );
               },
             ),
-
             Padding(
               padding: const EdgeInsets.all(20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Nama makanan
-                  Text(
-                    makanan.namaMakanan,
-                    style: const TextStyle(
-                      fontSize: 26,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  CustomText(
+                    text: makanan.namaMakanan,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
                   ),
-
                   const SizedBox(height: 10),
 
-                  // Harga makanan
-                  Text(
-                    "Rp ${makanan.harga}",
-                    style: const TextStyle(
-                      fontSize: 22,
-                      color: Colors.orange,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  CustomText(
+                    text: "Harga: ${makanan.harga}",
+                    fontSize: 18,
+                    color: Colors.green,
+                    fontWeight: FontWeight.bold,
                   ),
-
                   const SizedBox(height: 15),
 
-                  // Rating makanan
                   Row(
                     children: [
                       const Icon(
@@ -78,62 +69,42 @@ class DetailmakananPage extends StatelessWidget {
                         size: 28,
                       ),
                       const SizedBox(width: 5),
-                      Text(
-                        makanan.ratingMakanan.toString(),
-                        style: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      CustomText(
+                        text: "${makanan.ratingMakanan}",
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
                       ),
                     ],
                   ),
-
                   const SizedBox(height: 25),
 
-                  // Review makanan
-                  const Text(
-                    "Review Makanan",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  const CustomText(
+                    text: "Review Makanan",
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
                   ),
-
                   const SizedBox(height: 8),
 
-                  Text(
-                    makanan.reviewMakanan,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      height: 1.5,
-                    ),
+                  CustomText(
+                    text: makanan.reviewMakanan,
+                    fontSize: 16,
                   ),
-
                   const SizedBox(height: 25),
 
-                  // Deskripsi makanan
-                  const Text(
-                    "Deskripsi Makanan",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  const CustomText(
+                    text: "Deskripsi Makanan",
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
                   ),
-
                   const SizedBox(height: 8),
 
-                  Text(
-                    makanan.deskripsiMakanan,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      height: 1.5,
-                    ),
+                  CustomText(
+                    text: makanan.deskripsiMakanan,
+                    fontSize: 16,
                     textAlign: TextAlign.justify,
                   ),
-
                   const SizedBox(height: 30),
 
-                  // Tombol kembali
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
