@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'My Learning App',
-      initialRoute: Routes.main_menu,
+      initialRoute: Routes.menu_drawer,
       getPages:Routes.myPages,
       theme: ThemeData(
         // This is the theme of your application.

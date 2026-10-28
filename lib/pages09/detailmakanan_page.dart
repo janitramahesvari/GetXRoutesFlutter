@@ -7,7 +7,7 @@ class DetailmakananPage extends StatelessWidget {
   DetailmakananPage({super.key});
 
   final DetailmakananController controller =
-      Get.find<DetailmakananController>();
+      Get.put(DetailmakananController());
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +52,6 @@ class DetailmakananPage extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                   const SizedBox(height: 10),
-
                   CustomText(
                     text: "Harga: ${makanan.harga}",
                     fontSize: 18,
@@ -60,7 +59,6 @@ class DetailmakananPage extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                   const SizedBox(height: 15),
-
                   Row(
                     children: [
                       const Icon(
@@ -77,34 +75,29 @@ class DetailmakananPage extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 25),
-
                   const CustomText(
                     text: "Review Makanan",
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
                   const SizedBox(height: 8),
-
                   CustomText(
                     text: makanan.reviewMakanan,
                     fontSize: 16,
                   ),
                   const SizedBox(height: 25),
-
                   const CustomText(
                     text: "Deskripsi Makanan",
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
                   const SizedBox(height: 8),
-
                   CustomText(
                     text: makanan.deskripsiMakanan,
                     fontSize: 16,
                     textAlign: TextAlign.justify,
                   ),
                   const SizedBox(height: 30),
-
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
